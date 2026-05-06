@@ -20,8 +20,8 @@ tab1, tab2 = st.tabs(["Forward Transform f(t) ➔ F(s)", "Inverse Transform F(s)
 # --- TAB 1: FORWARD TRANSFORM ---
 with tab1:
     st.write("### Time Domain Input")
-    # Default value is the e^-t * sin(t) example from your notes
-    f_input = st.text_input("Enter a function f(t):", value="exp(-t) * sin(t)")
+    # Updated default to the right-hand side of your Example ODE
+    f_input = st.text_input("Enter a function f(t):", value="1 + exp(-t)")
     
     try:
         # sympify converts the raw string into a mathematical object
@@ -45,7 +45,7 @@ with tab1:
 # --- TAB 2: INVERSE TRANSFORM & PARTIAL FRACTIONS ---
 with tab2:
     st.write("### Frequency Domain Input")
-    # Default value is the heavy partial fraction example from your class notes
+    # This is already set to the algebraic equation Y(s) from your Example ODE
     F_input = st.text_input("Enter a function F(s):", value="(2*s + 1) / (s*(s+1)*(s^2 + 4*s + 6))")
     
     try:
